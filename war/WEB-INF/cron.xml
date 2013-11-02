@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+	<cron>
+		<url>/cron/feedcache?feed=http://feeds.feedburner.com/Fromdev</url>
+		<description>Re Populate the Fromdev cache every day</description>
+		<schedule>every day 9:00</schedule>
+	</cron>
+	<cron>
+		<url>/cron/feedcache?feed=http://feeds.copyblogger.com/copyblogger&amp;x=1</url>
+		<description>Re Populate the Copy Blogger cache every day</description>
+		<schedule>every day 9:30</schedule>
+	</cron>
+	<cron>
+		<url>/cron/feedcache?feed=http://feeds2.feedburner.com/webdesignerdepot?format=rss</url>
+		<description>Re Populate the Web Designer Depot cache every day</description>
+		<schedule>every day 10:00</schedule>
+	</cron>
+	<cron>
+		<url>/cron/feedcache?feed=http://rss1.smashingmagazine.com/feed/</url>
+		<description>Re Populate the Smashing Magazine cache every day</description>
+		<schedule>every day 10:30</schedule>
+	</cron>
+	<cron>
+		<url>/cron/feedcache?feed=http://feeds.feedburner.com/onextrapixel</url>
+		<description>Re Populate the OneXtraPixel cache every day</description>
+		<schedule>every day 11:30</schedule>
+	</cron>
+	<cron>
+		<url>/cron/feedcache?feed=http://feeds.feedburner.com/codinghorror</url>
+		<description>Re Populate the CodingHorror cache every day</description>
+		<schedule>every day 12:00</schedule>
+	</cron>
+	<cron>
+		<url>/cron/feedcache?feed=http://feeds2.feedburner.com/SixRevisions</url>
+		<description>Re Populate the SixRevisions cache every day</description>
+		<schedule>every day 12:30</schedule>
+	</cron>
+</cronentries>
