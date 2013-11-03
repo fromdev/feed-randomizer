@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cronentries>
 	<cron>
+		<url>/cron/keepalive</url>
+		<description>Keep the app loaded</description>
+		<schedule>every 10 minutes</schedule>
+	</cron>
+	<cron>
 		<url>/cron/feedcache?feed=http://feeds.feedburner.com/Fromdev</url>
 		<description>Re Populate the Fromdev cache every day</description>
 		<schedule>every day 9:00</schedule>

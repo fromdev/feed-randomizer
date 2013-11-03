@@ -1,5 +1,6 @@
 package com.fromdev.automation.util;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.concurrent.ExecutorService;
@@ -80,39 +81,41 @@ public class FeedReader implements Runnable {
 	}
 
 	public static void loadFeed(String feedUrl) {
+
 		if (StringUtil.notNullOrEmpty(feedUrl)) {
+			XmlReader reader = null;
+
 			try {
 				URL url = new URL(feedUrl);
-				XmlReader reader = null;
 
-				try {
+				reader = new XmlReader(url);
+				SyndFeed feed = new SyndFeedInput().build(reader);
+				System.out.println("Feed Title: " + feed.getAuthor());
 
-					reader = new XmlReader(url);
-					SyndFeed feed = new SyndFeedInput().build(reader);
-					System.out.println("Feed Title: " + feed.getAuthor());
-
-					for (Iterator i = feed.getEntries().iterator(); i.hasNext();) {
-						SyndEntry entry = (SyndEntry) i.next();
-						// System.out.println(entry.getTitle() + ":" +
-						// entry.getLink()
-						// + ", " + entry.getUri());
-						ShareableItem item = new ShareableItem();
-						item.setUrl(entry.getLink());
-						item.setTags(StringUtil.extractTags(entry.getTitle()));
-						item.setDescription(entry
-								.getTitle()
-								.toLowerCase()
-								.replaceAll(StringUtil.SPECIAL_CHAR_PATTERN, ""));
-						FeedCache.add(item);
-						System.out.println("Caching Progress... "
-								+ FeedCache.cache().size());
-					}
-				} finally {
-					if (reader != null)
-						reader.close();
+				for (Iterator i = feed.getEntries().iterator(); i.hasNext();) {
+					SyndEntry entry = (SyndEntry) i.next();
+					// System.out.println(entry.getTitle() + ":" +
+					// entry.getLink()
+					// + ", " + entry.getUri());
+					ShareableItem item = new ShareableItem();
+					item.setUrl(entry.getLink());
+					item.setTags(StringUtil.extractTags(entry.getTitle()));
+					item.setDescription(entry.getTitle().toLowerCase()
+							.replaceAll(StringUtil.SPECIAL_CHAR_PATTERN, ""));
+					FeedCache.add(item);
+					System.out.println("Caching Progress... "
+							+ FeedCache.cache().size());
 				}
+
 			} catch (Exception e) {
 				throw new RuntimeException(e);
+			} finally {
+				if (reader != null)
+					try {
+						reader.close();
+					} catch (IOException e) {
+
+					}
 			}
 		}
 	}
