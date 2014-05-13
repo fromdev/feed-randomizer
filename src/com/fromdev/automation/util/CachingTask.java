@@ -1,6 +1,6 @@
 package com.fromdev.automation.util;
 
-public class CachingTask implements Runnable {
+public class CachingTask  {
 
 	private String[] feedUrls;
 
@@ -8,7 +8,6 @@ public class CachingTask implements Runnable {
 		this.feedUrls = url;
 	}
 
-	@Override
 	public void run() {
 		FeedReader.loadFeeds(feedUrls);
 	}

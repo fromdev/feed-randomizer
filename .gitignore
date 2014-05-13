@@ -164,3 +164,15 @@ pip-log.txt
 
 # Ignore target at the top level
 /target/
+
+*.class
+
+war/WEB-INF/classes/com/fromdev/automation/util/StringUtil.class
+
+war/WEB-INF/classes/com/fromdev/automation/util/FeedReader.class
+
+war/WEB-INF/classes/com/fromdev/automation/feed/FeedRandomizerServlet.class
+
+war/WEB-INF/classes/com/fromdev/automation/feed/FeedRandomizerServlet.class
+
+*.class

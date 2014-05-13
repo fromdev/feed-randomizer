@@ -100,7 +100,7 @@ public class FeedReader implements Runnable {
 					ShareableItem item = new ShareableItem();
 					item.setUrl(entry.getLink());
 					item.setTags(StringUtil.extractTags(entry.getTitle()));
-					item.setDescription(entry.getTitle().toLowerCase()
+					item.setDescription(entry.getTitle()
 							.replaceAll(StringUtil.SPECIAL_CHAR_PATTERN, ""));
 					FeedCache.add(item);
 					System.out.println("Caching Progress... "

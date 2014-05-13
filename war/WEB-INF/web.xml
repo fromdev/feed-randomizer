@@ -33,6 +33,11 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 		</init-param>
 	</servlet>
 	<servlet>
+		<servlet-name>FeedOnBufferEmpty</servlet-name>
+		<servlet-class>com.fromdev.automation.feed.FeedOnBufferEmptyServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
 		<servlet-name>FeedCache</servlet-name>
 		<servlet-class>com.fromdev.automation.feed.FeedCacheServlet
 		</servlet-class>
@@ -50,6 +55,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	<servlet-mapping>
 		<servlet-name>FeedRandomizer</servlet-name>
 		<url-pattern>/feedrandomizer</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FeedOnBufferEmpty</servlet-name>
+		<url-pattern>/feedonbufferempty</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>FeedCache</servlet-name>

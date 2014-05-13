@@ -5,9 +5,14 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
+
+import com.google.gson.Gson;
+import com.sun.xml.internal.stream.util.BufferAllocator;
 
 public class StringUtil {
 	public static final String SPECIAL_CHAR_PATTERN = "[-+.^:,]";
@@ -109,6 +114,10 @@ public class StringUtil {
 		return !( s == null || "".equals(s));
 	}
 
+	public static String ensureNotNullOrEmpty(String s, String defaultValue) {
+		return notNullOrEmpty(s) ? s : defaultValue;
+	}
+	
 	public static String[] splitOrDefault(String s, String[] old) {
 		if (notNullOrEmpty(s)) {
 			return s.split("\n");
@@ -129,13 +138,44 @@ public class StringUtil {
 		return "";
 	}
 
+	public static Map readRemoteJson(String fileUrl) {
+		URL url;
+		try {
+			url = new URL(fileUrl);
+
+			Scanner s = new Scanner(url.openStream());
+			String val = s.useDelimiter("\\Z").next();
+			Gson gson = new Gson();
+			Map map = gson.fromJson(val, HashMap.class);
+			return map;
+		} catch (Exception e) {
+			System.out.println("Error reading remote json " + fileUrl + " " + e.getMessage());
+		}
+		return new HashMap();
+	}
+	
+	
+	public static boolean isBufferEmpty(String bufferUrl) {
+		Map jsonMap = readRemoteJson(bufferUrl);
+		boolean bufferEmpty = false;
+		Object total = jsonMap.get("total");
+		if(total != null) {
+			if(total instanceof Double) {
+				bufferEmpty = ((Double) total) == 0f;
+			} else if(total instanceof Long) {
+				bufferEmpty = ((Long) total) == 0L;
+			}
+		}
+		return bufferEmpty;
+	}
 	public static void main(String[] args) {
 		// System.out.println(removeUrlParams("http://net.tutsplus.com/tutorials/tools-and-tips/two-factor-auth-using-authy/"));
 		// String s =
 		// readRemoteFile("http://www.puzzlers.org/pub/wordlists/pocket.txt");
-		String s = readRemoteFile("https://raw.github.com/fromdev/fromdev-static/gh-pages/release/web-dev-feeds.txt");
-		// System.out
-		// .println(s);
+		//String s = readRemoteFile("https://raw.github.com/fromdev/fromdev-static/gh-pages/release/web-dev-feeds.txt");
+		String bufferUrl = "https://api.bufferapp.com/1/profiles/5042c321fc99f7612900000f/updates/pending.json?access_token=1/14e185521a83bb5f4a253d59e5d53a5e&count=1";
+		String s = readRemoteFile(bufferUrl);
+		System.out.println(isBufferEmpty(bufferUrl));
 		String [] old = {""};
 		String[] list = splitOrDefault(s, old);
 		for (int i = 0; i < list.length; i++) {

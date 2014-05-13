@@ -15,15 +15,15 @@ import com.fromdev.automation.util.StringUtil;
 
 @SuppressWarnings("serial")
 public class FeedRandomizerServlet extends HttpServlet {
-	private static final String APPLICATION_RSS_XML = "application/rss+xml";
+	public static final String APPLICATION_RSS_XML = "application/rss+xml";
 	String appBaseUrl = "http://feedrandomizer.appspot.com/";
 	String appFeedUrl = appBaseUrl + "feedrandomizer";
-	private final String rssPrefix = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rss version=\"2.0\"\n    xmlns:content=\"http://purl.org/rss/1.0/modules/content/\"\n    xmlns:wfw=\"http://wellformedweb.org/CommentAPI/\"\n    xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\n    xmlns:atom=\"http://www.w3.org/2005/Atom\"\n>\n\n<channel>\n    <title>Feed Randomizer</title>\n    <link>"
+	protected final String rssPrefix = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rss version=\"2.0\"\n    xmlns:content=\"http://purl.org/rss/1.0/modules/content/\"\n    xmlns:wfw=\"http://wellformedweb.org/CommentAPI/\"\n    xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\n    xmlns:atom=\"http://www.w3.org/2005/Atom\"\n>\n\n<channel>\n    <title>Feed Randomizer</title>\n    <link>"
 			+ appBaseUrl
 			+ "</link>\n    <atom:link href=\""
 			+ appFeedUrl
 			+ "\" rel=\"self\" type=\"application/rss+xml\" />\n    <description>Feed Randomizer</description>\n    <language>en</language>";
-	private final String rssSuffix = "</channel>\n</rss>";
+	protected final String rssSuffix = "</channel>\n</rss>";
 
 	/**
 	 * default feed list to load in case cache is empty
@@ -44,6 +44,12 @@ public class FeedRandomizerServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
+		String itemRss = findItem();
+		resp.setContentType(APPLICATION_RSS_XML);
+		resp.getWriter().println(rssPrefix + itemRss + rssSuffix);
+	}
+
+	protected String findItem() {
 		ShareableItem item = FeedCache.getRandomItem();
 		String itemRss = "";
 		if (item != null) {
@@ -51,7 +57,6 @@ public class FeedRandomizerServlet extends HttpServlet {
 		} else {
 			initFeedCache();
 		}
-		resp.setContentType(APPLICATION_RSS_XML);
-		resp.getWriter().println(rssPrefix + itemRss + rssSuffix);
+		return itemRss;
 	}
 }
