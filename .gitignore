@@ -167,12 +167,4 @@ pip-log.txt
 
 *.class
 
-war/WEB-INF/classes/com/fromdev/automation/util/StringUtil.class
-
-war/WEB-INF/classes/com/fromdev/automation/util/FeedReader.class
-
-war/WEB-INF/classes/com/fromdev/automation/feed/FeedRandomizerServlet.class
-
-war/WEB-INF/classes/com/fromdev/automation/feed/FeedRandomizerServlet.class
-
-*.class
+/war/WEB-INF/classes/
