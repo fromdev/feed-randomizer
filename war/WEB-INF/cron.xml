@@ -6,43 +6,38 @@
 		<schedule>every 10 minutes</schedule>
 	</cron>
 	<cron>
-		<url>/cron/feedcache?feed=http://feeds.feedburner.com/Fromdev</url>
-		<description>Re Populate the Fromdev cache every week</description>
-		<schedule>every monday 9:00</schedule>
+		<url>/cron/feedcache?feed=http://feeds.feedburner.com/Quicksprout</url>
+		<description>Re Populate the Quicksprout cache every day</description>
+		<schedule>every day 9:00</schedule>
 	</cron>
 	<cron>
-		<url>/cron/feedcache?feed=http://feeds.copyblogger.com/copyblogger&amp;x=1</url>
-		<description>Re Populate the Copy Blogger cache every week</description>
-		<schedule>every monday 9:30</schedule>
+		<url>/cron/feedcache?feed=http://www.socialmediaexaminer.com/feed/</url>
+		<description>Re Populate the socialmediaexaminer cache every day</description>
+		<schedule>every day 9:30</schedule>
 	</cron>
 	<cron>
-		<url>/cron/feedcache?feed=http://feeds2.feedburner.com/webdesignerdepot?format=rss</url>
-		<description>Re Populate the Web Designer Depot cache every week</description>
-		<schedule>every tuesday 9:00</schedule>
+		<url>/cron/feedcache?feed=http://feeds.feedburner.com/mozblog</url>
+		<description>Re Populate the Moz cache every day</description>
+		<schedule>every day 10:00</schedule>
 	</cron>
 	<cron>
-		<url>/cron/feedcache?feed=http://rss1.smashingmagazine.com/feed/</url>
-		<description>Re Populate the Smashing Magazine cache every week</description>
-		<schedule>every tuesday 9:30</schedule>
+		<url>/cron/feedcache?feed=http://feeds.searchengineland.com/searchengineland</url>
+		<description>Re Populate the searchengineland cache every day</description>
+		<schedule>every day 10:30</schedule>
 	</cron>
 	<cron>
-		<url>/cron/feedcache?feed=http://feeds.feedburner.com/onextrapixel</url>
-		<description>Re Populate the OneXtraPixel cache every week</description>
-		<schedule>every wednesday 9:00</schedule>
+		<url>/cron/feedcache?feed=http://feeds.searchenginejournal.com/SearchEngineJournal</url>
+		<description>Re Populate the SearchEngineJournal cache every day</description>
+		<schedule>every day 11:30</schedule>
 	</cron>
 	<cron>
-		<url>/cron/feedcache?feed=http://feeds.feedburner.com/codinghorror</url>
-		<description>Re Populate the CodingHorror cache every week</description>
-		<schedule>every wednesday 9:30</schedule>
+		<url>/cron/feedcache?feed=http://searchenginewatch.com/rss</url>
+		<description>Re Populate the searchenginewatch cache every day</description>
+		<schedule>every day 12:00</schedule>
 	</cron>
 	<cron>
-		<url>/cron/feedcache?feed=http://feeds2.feedburner.com/SixRevisions</url>
-		<description>Re Populate the SixRevisions cache every week</description>
-		<schedule>every thursday 9:00</schedule>
-	</cron>
-	<cron>
-		<url>/cron/feedcache?feed=http://www.stumbleupon.com/rss/stumbler/fromdev3/likes</url>
-		<description>Re Populate the Stumble Likes By Fromdev every week</description>
-		<schedule>every thursday 9:30</schedule>
+		<url>/cron/feedcache?feed=http://feeds.seroundtable.com/SearchEngineRoundtable1</url>
+		<description>Re Populate the seroundtable cache every day</description>
+		<schedule>every day 12:30</schedule>
 	</cron>
 </cronentries>
