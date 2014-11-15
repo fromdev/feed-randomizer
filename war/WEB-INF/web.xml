@@ -9,6 +9,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 		<servlet-class>com.fromdev.automation.feed.FeedRandomizerServlet
 		</servlet-class>
 		<init-param>
+			<param-name>feedUrl</param-name>
+			<param-value>https://raw.githubusercontent.com/fromdev/fromdev-static/gh-pages/release/web-dev-feeds.txt</param-value>
+		</init-param>
+		<init-param>
 			<param-name>feedList</param-name>
 			<param-value>
 				http://feeds.copyblogger.com/copyblogger&amp;x=1
