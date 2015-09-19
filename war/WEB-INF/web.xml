@@ -5,8 +5,8 @@
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 	<servlet>
-		<servlet-name>FeedRandomizer</servlet-name>
-		<servlet-class>com.fromdev.automation.feed.FeedRandomizerServlet
+		<servlet-name>FeedAggregator</servlet-name>
+		<servlet-class>com.fromdev.automation.feed.FeedAggregatorServlet
 		</servlet-class>
 		<init-param>
 			<param-name>feedUrl</param-name>
@@ -56,7 +56,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 		</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>FeedRandomizer</servlet-name>
+		<servlet-name>FeedAggregator</servlet-name>
 		<url-pattern>/feedrandomizer</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
