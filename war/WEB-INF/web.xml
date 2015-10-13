@@ -10,28 +10,25 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 		</servlet-class>
 		<init-param>
 			<param-name>feedUrl</param-name>
-			<param-value>https://raw.githubusercontent.com/fromdev/fromdev-static/gh-pages/release/web-dev-feeds.txt</param-value>
+			<param-value>https://raw.githubusercontent.com/fromdev/fromdev-static/gh-pages/release/java-feeds.txt</param-value>
 		</init-param>
 		<init-param>
 			<param-name>feedList</param-name>
 			<param-value>
-				http://feeds.copyblogger.com/copyblogger&amp;x=1
-				http://www.fromdev.com/feeds/posts/default?orderby=updated&amp;max-results=1000
-				http://feeds2.feedburner.com/webdesignerdepot?format=rss
-				http://rss1.smashingmagazine.com/feed/
-				http://feeds.feedburner.com/onextrapixel
-				http://feeds.feedburner.com/ProbloggerHelpingBloggersEarnMoney
-				http://feeds.feedburner.com/codinghorror
-				http://feeds2.feedburner.com/24thfloor
-				http://feeds2.feedburner.com/thenextweb
-				http://feeds.feedburner.com/SpyreStudios
-				http://feeds2.feedburner.com/SixRevisions
-				http://feeds2.feedburner.com/SmashingApps
-				http://feeds.feedburner.com/makeuseof
-				http://www.killerstartups.com/feed/
-				http://digg.com/search/?q=web%20design&amp;format=rss
-				http://digg.com/tag/curious.rss
-				http://digg.com/tag/technology.rss		
+				http://feeds.feedburner.com/Javarevisited
+http://javapapers.com/feed/
+http://www.programcreek.com/feed/
+http://www.mkyong.com/feed/
+https://javax0.wordpress.com/feed/
+http://howtodoinjava.com/feed/
+http://www.fromdev.com/feeds/posts/default/-/Java
+http://vanillajava.blogspot.com/feeds/posts/default
+http://feeds.feedburner.com/JavaCodeGeeks
+http://feeds.dzone.com/java
+http://spring.io/blog/category/engineering.atom
+http://beginnersbook.com/feed/
+http://feeds.feedburner.com/JavaByNatarajSir
+http://feeds.feedburner.com/Java67	
 			</param-value>
 		</init-param>
 	</servlet>
