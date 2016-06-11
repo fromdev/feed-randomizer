@@ -10,25 +10,28 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 		</servlet-class>
 		<init-param>
 			<param-name>feedUrl</param-name>
-			<param-value>https://raw.githubusercontent.com/fromdev/fromdev-static/gh-pages/release/java-feeds.txt</param-value>
+			<param-value>https://raw.githubusercontent.com/fromdev/fromdev-static/gh-pages/release/social-feed-list.txt</param-value>
 		</init-param>
 		<init-param>
 			<param-name>feedList</param-name>
 			<param-value>
-				http://feeds.feedburner.com/Javarevisited
-http://javapapers.com/feed/
-http://www.programcreek.com/feed/
-http://www.mkyong.com/feed/
-https://javax0.wordpress.com/feed/
-http://howtodoinjava.com/feed/
-http://www.fromdev.com/feeds/posts/default/-/Java
-http://vanillajava.blogspot.com/feeds/posts/default
-http://feeds.feedburner.com/JavaCodeGeeks
-http://feeds.dzone.com/java
-http://spring.io/blog/category/engineering.atom
-http://beginnersbook.com/feed/
-http://feeds.feedburner.com/JavaByNatarajSir
-http://feeds.feedburner.com/Java67	
+				http://feeds.feedburner.com/Quicksprout
+http://www.socialmediaexaminer.com/feed/
+http://feeds.feedburner.com/mozblog
+http://feeds.searchengineland.com/searchengineland
+http://feeds.searchenginejournal.com/SearchEngineJournal
+http://searchenginewatch.com/rss
+http://feeds.seroundtable.com/SearchEngineRoundtable1
+http://www.seocentro.com/feeds/seocentro.xml
+http://feeds.feedburner.com/seobythesea/Tesr
+http://feeds.marketingpilgrim.com/marketing-pilgrim
+http://www.seobook.com/index.rdf
+http://searchenginewatch.com/rss
+http://feeds.copyblogger.com/copyblogger
+http://seogadget.com/feed/
+http://www.squidoo.com/xml/syndicate_lensmaster/priyankadandekar
+http://brilliantsprout.tumblr.com/rss
+http://www.billionfollowers.com/feeds/posts/default
 			</param-value>
 		</init-param>
 	</servlet>
